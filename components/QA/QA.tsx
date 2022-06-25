@@ -101,7 +101,7 @@ const QA = () => {
               </div>
             )}
             <div className='justify-center p-2 cursor-pointer' onClick={() => setQ(q)}>
-              <Link href={`/answerPage`}>
+              <Link href={`/QandA/${q.id}`}>
                 <div className='block p-6 rounded-lg shadow-lg bg-white max-w-sm hover:bg-gray-300'>
                   <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2'>
                     QuestionID: {q.id}
