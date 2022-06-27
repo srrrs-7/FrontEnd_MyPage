@@ -6,7 +6,7 @@ import { GLTFLoader } from 'THREE/examples/jsm/loaders/GLTFLoader.js';
 import * as dat from 'dat.gui';
 import Script from 'next/script';
 
-const GUIinit = async (canvas: any) => {
+const init = async (canvas: any) => {
   //import Blender
   //const monkey = new URL('../assets/monkey.glb', import.meta.url);
   // const assetLoader = new GLTFLoader();
@@ -113,16 +113,6 @@ const GUIinit = async (canvas: any) => {
   sphere.castShadow = true;
   scene.add(sphere);
 
-  //   const vShader = `
-  //     void main() {
-  //       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-  //     }
-  //   `;
-  //   const fShader = `
-  //     void main() {
-  //       gl_FragColor = vec4(0.5, 0.5, 1.0, 1.0);
-  //     }
-  // `;
   // const sphereGeometry2 = new THREE.SphereGeometry(4);
   // const sphereMaterial2 = new THREE.ShaderMaterial({
   //   vertexShader: document?.getElementById('vertexShader')?.textContent,
@@ -248,7 +238,7 @@ const GUIinit = async (canvas: any) => {
 
     for (let i = 0; i < intersects.length; i++) {
       if (intersects[i].object.id === sphereId) {
-        (intersects[i].object as any).material.color.set(0xffaa00);
+        (intersects[i].object as any).material.color.set('0xffaa00');
       }
       if (intersects[i].object.name === 'theBox') {
         intersects[i].object.rotation.x = elapsedTime;
@@ -288,18 +278,12 @@ const Three: NextPage = () => {
     // Canvas
     canvas = document.getElementById('canvas')!;
     // GUI init
-    GUIinit(canvas);
+    init(canvas);
   }, []);
 
   return (
     <>
-      <div className='bg-black'>
-        {/* <Script id='vertexShader' type='vertex'>
-          void main() {(gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0))}
-        </Script>
-        <Script id='fragmentShader' type='fragment'>
-          void main() {(gl_FragColor = vec4(0.5, 0.5, 1.0, 1.0))}
-        </Script> */}
+      <div>
         <canvas id='canvas'></canvas>
       </div>
     </>

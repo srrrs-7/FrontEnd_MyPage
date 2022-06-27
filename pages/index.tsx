@@ -1,18 +1,41 @@
-import type { NextPage } from 'next';
-import Blogs from '../components/Blog/Blogs';
-import CreateModal from '../components/Blog/CreateModal';
+import React, { useState } from 'react';
+import Planet from '../3D/Planet';
+import Three from '../3D/Three';
 import Header from '../components/Header';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <Header />
-      <div>
-        <Blogs />
-        <CreateModal />
-      </div>
-    </div>
-  );
+const Home = () => {
+  const [show, setShow] = useState(false);
+  let body = <></>;
+
+  if (!show) {
+    body = (
+      <>
+        <div className='flex justify-center my-64'>
+          <PacmanLoader color={'green'} size={50} />
+        </div>
+      </>
+    );
+    setTimeout(() => {
+      setShow(true);
+    }, 2000);
+  } else if (show) {
+    body = (
+      <>
+        <div>
+          <div className='top-0'>
+            <Header />
+          </div>
+          <div>
+            {/* <Three /> */}
+            <Planet />
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  return body;
 };
 
 export default Home;

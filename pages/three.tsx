@@ -1,13 +1,11 @@
 import React from 'react';
-import Three from '../3D/Three';
+import Troika from '../3D/Troika';
 
-type Props = {};
-
-const three = (props: Props) => {
+const three = () => {
   return (
     <>
       <div>
-        <Three />
+        <Troika />
       </div>
     </>
   );
