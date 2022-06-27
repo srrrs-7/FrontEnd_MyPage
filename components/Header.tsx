@@ -2,82 +2,40 @@ import React from 'react';
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
-  BookmarkAltIcon,
-  CalendarIcon,
-  ChartBarIcon,
   CursorClickIcon,
   MenuIcon,
-  PhoneIcon,
-  PlayIcon,
-  RefreshIcon,
   ShieldCheckIcon,
-  SupportIcon,
   ViewGridIcon,
-  XIcon,
-  PlusCircleIcon,
+  CubeIcon,
+  DatabaseIcon,
+  CodeIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 const solutions = [
   {
-    name: 'Analytics',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '#',
-    icon: ChartBarIcon,
+    name: '3D Graphic',
+    description: 'Three.js, Blender, UnrealEngine, Unity',
+    href: '/three',
+    icon: CubeIcon,
   },
   {
-    name: 'Engagement',
-    description: 'Speak directly to your customers in a more meaningful way.',
-    href: '#',
-    icon: CursorClickIcon,
+    name: 'Node.js',
+    description: 'React.js, Next.js',
+    href: '/node',
+    icon: CodeIcon,
   },
   {
-    name: 'Security',
-    description: "Your customers' data will be safe and secure.",
-    href: '#',
-    icon: ShieldCheckIcon,
+    name: 'GO Language',
+    description: 'GinGonic, sqlc',
+    href: '/golang',
+    icon: CodeIcon,
   },
   {
-    name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
-    href: '#',
-    icon: ViewGridIcon,
-  },
-  {
-    name: 'Automations',
-    description: 'Build strategic funnels that will drive your customers to convert',
-    href: '#',
-    icon: RefreshIcon,
-  },
-];
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-];
-const resources = [
-  {
-    name: 'Help Center',
-    description: 'Get all of your questions answered in our forums or contact support.',
-    href: '#',
-    icon: SupportIcon,
-  },
-  {
-    name: 'Guides',
-    description: 'Learn how to maximize our platform to get the most out of it.',
-    href: '#',
-    icon: BookmarkAltIcon,
-  },
-  {
-    name: 'Events',
-    description: 'See what meet-ups and other events we might be planning near you.',
-    href: '#',
-    icon: CalendarIcon,
-  },
-  {
-    name: 'Security',
-    description: 'Understand how we take your privacy seriously.',
-    href: '#',
-    icon: ShieldCheckIcon,
+    name: 'Database',
+    description: 'SQL PostgreSQL, Redis',
+    href: '/database',
+    icon: DatabaseIcon,
   },
 ];
 
@@ -93,11 +51,7 @@ const Header = () => {
           <div className='flex justify-start lg:w-0 lg:flex-1'>
             <a href='#'>
               <span className='sr-only'>Workflow</span>
-              <img
-                className='h-8 w-auto sm:h-10'
-                src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
-                alt=''
-              />
+              <span className='text-3xl font-serif'>sRRRs</span>
             </a>
           </div>
           <div className='-mr-2 -my-2 md:hidden'>
@@ -155,24 +109,6 @@ const Header = () => {
                             </a>
                           ))}
                         </div>
-                        <div className='px-5 py-5 bg-white space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8'>
-                          <div className='flex ml-auto p-4 '>
-                            {callsToAction.map((item) => (
-                              <div key={item.name} className='flow-root px-4'>
-                                <a
-                                  href={item.href}
-                                  className='-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100'
-                                >
-                                  <item.icon
-                                    className='flex-shrink-0 h-6 w-6 text-gray-400'
-                                    aria-hidden='true'
-                                  />
-                                  <span className='ml-3'>{item.name}</span>
-                                </a>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
                       </div>
                     </Popover.Panel>
                   </Transition>
@@ -185,6 +121,9 @@ const Header = () => {
             </a>
             <a href='/QandA' className='text-base font-medium text-gray-500 hover:text-gray-900'>
               Q&A
+            </a>
+            <a href='/query' className='text-base font-medium text-gray-500 hover:text-gray-900'>
+              Query
             </a>
             <a href='/' className='text-base font-medium text-gray-500 hover:text-gray-900'>
               Home

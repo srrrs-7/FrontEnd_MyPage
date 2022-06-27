@@ -281,13 +281,7 @@ const Three: NextPage = () => {
     init(canvas);
   }, []);
 
-  return (
-    <>
-      <div>
-        <canvas id='canvas'></canvas>
-      </div>
-    </>
-  );
+  return <></>;
 };
 
 export default Three;

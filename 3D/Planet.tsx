@@ -18,10 +18,13 @@ const uranusRingTexture = '/uranus ring.png';
 const neptuneTexture = '/neptune.jpeg';
 const plutoTexture = '/pluto.jpeg';
 
-const init = async () => {
-  const renderer = new THREE.WebGLRenderer();
+const init = async (canvas: any) => {
+  const renderer = new THREE.WebGLRenderer({
+    canvas: canvas || undefined,
+    alpha: true,
+  });
 
-  renderer.setSize(window.innerWidth, window.innerHeight - 230);
+  renderer.setSize(window.innerWidth, window.innerHeight);
 
   document.body.appendChild(renderer.domElement);
 
@@ -146,14 +149,12 @@ const Planet: NextPage = () => {
     // Canvas
     canvas = document.getElementById('canvas')!;
     // GUI init
-    init();
+    init(canvas);
   }, []);
 
   return (
     <>
-      <div className='bg-orange-400'>
-        <canvas id='canvas'></canvas>
-      </div>
+      <canvas id='canvas'></canvas>
     </>
   );
 };

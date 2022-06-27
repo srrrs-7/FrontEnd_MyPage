@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Planet from '../3D/Planet';
-import Three from '../3D/Three';
 import Header from '../components/Header';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 
@@ -23,7 +22,7 @@ const Home = () => {
     body = (
       <>
         <div>
-          <div className='top-0'>
+          <div className='top-0 z-50'>
             <Header />
           </div>
           <div>

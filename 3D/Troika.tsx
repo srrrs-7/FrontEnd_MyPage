@@ -4,8 +4,11 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Text } from 'troika-three-text';
 
-const init = async () => {
-  const renderer = new THREE.WebGLRenderer();
+const init = async (canvas: any) => {
+  const renderer = new THREE.WebGLRenderer({
+    canvas: canvas || undefined,
+    alpha: true,
+  });
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 
@@ -75,7 +78,7 @@ const Troika: NextPage = () => {
     // Canvas
     canvas = document.getElementById('canvas')!;
     // GUI init
-    init();
+    init(canvas);
   }, []);
 
   return <></>;
