@@ -4,11 +4,10 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'THREE/examples/jsm/loaders/GLTFLoader.js';
 import * as dat from 'dat.gui';
-import Script from 'next/script';
 
 const init = async (canvas: any) => {
   //import Blender
-  //const monkey = new URL('../assets/monkey.glb', import.meta.url);
+  //const monkeyUrl = new URL('../assets/monkey.glb', import.meta.url);
   // const assetLoader = new GLTFLoader();
   // assetLoader.load(
   //   monkeyUrl.href,

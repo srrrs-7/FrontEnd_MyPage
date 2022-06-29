@@ -2,9 +2,9 @@ import type { NextPage } from 'next';
 import { useEffect } from 'react';
 import * as THREE from 'three';
 import Header from '../components/Header';
-import { Text } from 'troika-three-text';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
+import { GLTFLoader } from 'THREE/examples/jsm/loaders/GLTFLoader.js';
 
 const starsTexture = '/stars.jpeg';
 const sunTexture = '/sun.jpeg';
@@ -47,7 +47,7 @@ const init = async (canvas: any) => {
   spotLight.position.set(0, 0, 500);
   scene.add(spotLight);
 
-  const dLight = new THREE.DirectionalLight(0xffaaaa, 1);
+  const dLight = new THREE.DirectionalLight(0xa0a0a0, 1);
   dLight.position.set(0, 2, 5);
   scene.add(dLight);
 
@@ -88,30 +88,52 @@ const init = async (canvas: any) => {
     scene.add(mesh);
   });
 
-  const go = new Text();
-  go.text = 'Golang';
-  go.fontSize = 30;
-  go.position.set(70, -290, 0);
-  go.scale.set(1, 1, 10);
-  go.color = 0x00ffff;
-  go.outlineWidth = 1;
-  go.outlineColor = 0x00ffff;
-  go.anchorX = 'center';
-  go.fillOpacity = 0.8;
-  scene.add(go);
-  go.sync();
+  const loader2 = new FontLoader();
+  loader2.load('/The Bold Font_Bold.json', function (font: any) {
+    const textGeo2 = new TextGeometry('Golang', {
+      font: font,
+      size: 20,
+      height: 0,
+      curveSegments: 12,
+      bevelEnabled: true,
+      bevelThickness: 5,
+      bevelSize: 3,
+      bevelOffset: 0,
+      bevelSegments: 2,
+    });
+    textGeo2.center();
+    textGeo2.computeBoundingBox();
+    textGeo2.rotateY(-Math.PI / 10);
 
-  const cylinderGeo = new THREE.CylinderGeometry(35, 35, 60, 64);
-  const cylinderMat = new THREE.MeshPhongMaterial({
-    color: 0xffff00,
-    specular: 0xffff00,
-    shininess: 50,
+    const textMat2 = new THREE.MeshPhongMaterial({
+      color: 0x00ffff,
+      specular: 0xffffff,
+      shininess: 50,
+    });
+    const mesh2 = new THREE.Mesh(textGeo2, textMat2);
+    mesh2.position.set(70, -300, 0);
+    scene.add(mesh2);
   });
-  const cylinder = new THREE.Mesh(cylinderGeo, cylinderMat);
-  cylinder.position.set(-70, -450, 0);
-  cylinder.scale.set(1, 1, 1);
-  scene.add(cylinder);
 
+  const assetLoader = new GLTFLoader();
+  const databaseUrl = new URL('/public/database.glb', import.meta.url);
+  assetLoader.load(
+    databaseUrl.href,
+    function (gltf) {
+      const model = gltf.scene;
+      model.scale.set(80, 60, 50);
+      model.position.set(-100, -600, -60);
+      model.rotation.set(0, 3, 0);
+      model.castShadow = true;
+      scene.add(model);
+    },
+    undefined,
+    function (error) {
+      console.log(error);
+    },
+  );
+
+  // window scroll
   let scrollY = window.scrollY;
   window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
@@ -121,9 +143,6 @@ const init = async (canvas: any) => {
   function animate() {
     sun.rotateX(0.001);
     sun.rotateY(0.001);
-    go.rotateY(0.02);
-    cylinder.rotateX(0.02);
-    cylinder.rotateY(0.02);
     camera.position.y = -scrollY / 5;
     renderer.render(scene, camera);
   }
