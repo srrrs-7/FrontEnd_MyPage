@@ -707,6 +707,11 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+drag-react@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/drag-react/-/drag-react-1.1.0.tgz#767fe668d732658651ea4d7986d23eac402a2929"
+  integrity sha512-n38+upt7IgzaScNbjmTXUgIgRkwROrhXkctfEu9TMi0U1Mk0XGg/MNr+mCzlOgcHZ9tp0Q38iOU1EhUyz3uWOw==
+
 electron-to-chromium@^1.4.147:
   version "1.4.163"
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.163.tgz"

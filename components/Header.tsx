@@ -53,19 +53,16 @@ const Header = () => {
             </Popover.Button>
           </div>
           <Popover.Group as='nav' className='hidden md:flex space-x-10'>
-            <a href='/' className='text-base font-medium text-gray-500 hover:text-gray-900'>
-              Home
-            </a>
-            <Popover className='relative'>
+            <Popover className='relative z-50'>
               {({ open }: any) => (
                 <>
                   <Popover.Button
                     className={classNames(
                       open ? 'text-gray-900' : 'text-gray-500',
-                      'group bg-gray-300 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                      'group bg-gray-300 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 z-50',
                     )}
                   >
-                    <span>Work</span>
+                    <span>Skills</span>
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
@@ -117,8 +114,20 @@ const Header = () => {
             <a href='/QandA' className='text-base font-medium text-gray-500 hover:text-gray-900'>
               Q&A
             </a> */}
-            <a href='/query' className='text-base font-medium text-gray-500 hover:text-gray-900'>
+            <a
+              href='/profile'
+              className='text-base font-medium text-gray-500 hover:text-gray-900 z-50'
+            >
+              Profile
+            </a>
+            <a
+              href='/query'
+              className='text-base font-medium text-gray-500 hover:text-gray-900 z-50'
+            >
               Contact
+            </a>
+            <a href='/' className='text-base font-medium text-gray-500 hover:text-gray-900 z-50'>
+              Home
             </a>
           </Popover.Group>
           <div className='hidden md:flex items-center justify-end md:flex-1 lg:w-0'>
