@@ -1,9 +1,15 @@
 import React from 'react';
+import Header from '../components/Header';
 
 type Props = {};
 
 const query = (props: Props) => {
-  return <div>query</div>;
+  return (
+    <>
+      <Header />
+      <div></div>
+    </>
+  );
 };
 
 export default query;

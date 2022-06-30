@@ -1,11 +1,16 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 
-type Props = {};
+const Profile = dynamic(() => import('../3D/Profile'), {
+  ssr: true,
+});
 
-const profile = (props: Props) => {
+const profile = () => {
   return (
     <>
-      <div></div>
+      <div>
+        <Profile />
+      </div>
     </>
   );
 };

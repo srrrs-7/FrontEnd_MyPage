@@ -187,7 +187,7 @@
 
 "@types/node@^18.0.0":
   version "18.0.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.0.0.tgz#67c7b724e1bcdd7a8821ce0d5ee184d3b4dd525a"
+  resolved "https://registry.npmjs.org/@types/node/-/node-18.0.0.tgz"
   integrity sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==
 
 "@types/prop-types@*":
@@ -225,7 +225,7 @@
 
 "@types/three@^0.141.0":
   version "0.141.0"
-  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.141.0.tgz#d9d81a54b28ebc2a56931dfd4d9c54d25c20d6c8"
+  resolved "https://registry.npmjs.org/@types/three/-/three-0.141.0.tgz"
   integrity sha512-OJdKDgTPVBUgc+s74DYoy4aLznbFFC38Xm4ElmU1YwGNgR7GGFVvFCX7lpVgOsT6S1zSJtGdajTsOYE8/xY9nA==
   dependencies:
     "@types/webxr" "*"
@@ -709,7 +709,7 @@ doctrine@^3.0.0:
 
 drag-react@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/drag-react/-/drag-react-1.1.0.tgz#767fe668d732658651ea4d7986d23eac402a2929"
+  resolved "https://registry.npmjs.org/drag-react/-/drag-react-1.1.0.tgz"
   integrity sha512-n38+upt7IgzaScNbjmTXUgIgRkwROrhXkctfEu9TMi0U1Mk0XGg/MNr+mCzlOgcHZ9tp0Q38iOU1EhUyz3uWOw==
 
 electron-to-chromium@^1.4.147:

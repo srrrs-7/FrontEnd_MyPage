@@ -179,6 +179,7 @@ const Scroll: NextPage = () => {
       </div>
       <div>
         <canvas className='fixed top-0 left-0 z-0' id='canvas'></canvas>
+
         <section className='flex relative justify-start items-center mx-64 px-32 py-64 my-32 z-10'>
           <h1 className='text-white text-6xl font-serif tracking-wide justify-content hover:text-red-500'>
             <a href='/three'>3D Graphic</a>
@@ -187,7 +188,7 @@ const Scroll: NextPage = () => {
 
         <section className='flex relative justify-end items-center mx-64 px-56 py-64 my-32 z-10'>
           <h1 className='text-white text-6xl font-serif tracking-wide justify-content hover:text-green-500'>
-            <a href='/nodejs'>Node.js</a>
+            <a href='/node'>Node.js</a>
           </h1>
         </section>
 
