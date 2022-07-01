@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import Header from '../components/Header';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
-import { GLTFLoader } from 'THREE/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 const starsTexture = '/stars.jpeg';
 const sunTexture = '/sun.jpeg';
