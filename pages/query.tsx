@@ -16,11 +16,11 @@ const query = (props: Props) => {
   const [_, setIsOpen] = useRecoilState(EmailModalState);
 
   return (
-    <>
+    <div className='bg-orange-300 h-screen'>
       <Header />
-      <div className='mt-32 bg-orange-300'>
+      <div className='mt-32 bg-orange-300 h-full'>
         <div className='flex justify-center'>
-          <div className='flex flex-col md:flex-row md:max-w-3xl rounded-lg bg-white shadow-lg'>
+          <div className='flex flex-col md:flex-row md:max-w-3xl rounded-lg bg-white shadow-2xl'>
             <img
               className=' w-full h-96 md:h-auto object-cover md:w-64 rounded-t-lg md:rounded-none md:rounded-l-lg'
               src='/profile2.jpg'
@@ -85,7 +85,7 @@ const query = (props: Props) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
