@@ -2,8 +2,6 @@ import type { NextPage } from 'next';
 import { useEffect } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from 'THREE/examples/jsm/loaders/GLTFLoader.js';
-import * as dat from 'dat.gui';
 
 const init = async (canvas: any) => {
   //import Blender
@@ -83,10 +81,6 @@ const init = async (canvas: any) => {
   scene.add(box2);
 
   const boxGeometry3 = new THREE.BoxGeometry(1, 1, 1);
-  const boxMaterial3 = new THREE.MeshBasicMaterial({
-    //color: '#0000ff',
-    //map: textureLoader.load('/golang.png'),
-  });
   const box3MultiMaterial = [
     new THREE.MeshBasicMaterial({ map: textureLoader.load('/Go-Logo_Blue.webp') }),
     new THREE.MeshBasicMaterial({ map: textureLoader.load('/golang.png') }),
