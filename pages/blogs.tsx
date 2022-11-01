@@ -1,18 +1,27 @@
-import type { NextPage } from 'next';
-import Blogs from '../components/Blog/Blogs';
-import CreateModal from '../components/Blog/CreateModal';
+import React from 'react';
 import Header from '../components/Header';
+import Blog from '../components/Blog';
+import Footer from '../components/Footer';
 
-const Home: NextPage = () => {
+function blogs() {
   return (
-    <div>
-      <Header />
-      <div>
-        <Blogs />
-        <CreateModal />
+    <>
+      <div className='bg-orange-100 h-full grid-cols-3 grid-flow-col'>
+        <div className='z-50'>
+          <Header />
+        </div>
+        <div>
+          <Footer />
+        </div>
+        <div>
+          <Blog />
+        </div>
       </div>
-    </div>
+      <div className='bottom-0'>
+        <Footer />
+      </div>
+    </>
   );
-};
+}
 
-export default Home;
+export default blogs;
